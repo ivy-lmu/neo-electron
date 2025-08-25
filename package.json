@@ -2,8 +2,7 @@
   "name": "neo-electron",
   "version": "1.0.0",
   "description": "NEO electron app",
-  "license": "ISC",
-  "author": "",
+  "author": "ivy",
   "type": "commonjs",
   "main": "dist/main.js",
   "scripts": {
