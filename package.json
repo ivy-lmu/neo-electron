@@ -1,7 +1,7 @@
 {
   "name": "neo-electron",
   "version": "1.0.0",
-  "description": "",
+  "description": "NEO electron app",
   "license": "ISC",
   "author": "",
   "type": "commonjs",
