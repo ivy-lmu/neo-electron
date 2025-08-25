@@ -1,5 +1,7 @@
 name: Make Electron App
 on:
+  push:
+
 permissions: {}
 jobs:
   test:
