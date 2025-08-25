@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "noImplicitOverride": true,
+    "noEmitOnError": false,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "strict": true,
+    "incremental": true,
+    "strictPropertyInitialization": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "downlevelIteration": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "rootDir": "src",
+    "outDir": "dist",
+    "resolveJsonModule": true,
+    "module": "commonjs"
+  }
+}

@@ -5,11 +5,22 @@
   "license": "ISC",
   "author": "",
   "type": "commonjs",
-  "main": "main.js",
+  "main": "dist/main.js",
   "scripts": {
-    "start": "electron ."
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint",
+    "lint:ci": "eslint -o eslint.xml -f checkstyle",
+    "lint:fix": "eslint --fix",
+    "lint:inspect": "eslint --inspect-config",
+    "start": "npm run build && electron dist/main.js",
+    "update:axonivy:next": "npx --yes npm-check-updates @axonivy* -t semver -u"
   },
   "devDependencies": {
-    "electron": "^37.3.1"
-  }
+    "electron": "^37.3.1",
+    "typescript": "^5.9.2",
+    "@axonivy/eslint-config": "~13.2.0-next.847.a8ce22a",
+    "@axonivy/prettier-config": "~13.2.0-next.847.a8ce22a"
+  },
+  "prettier": "@axonivy/prettier-config"
 }
