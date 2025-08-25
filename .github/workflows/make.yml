@@ -22,8 +22,8 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
-          name: app zip
+          name: app
           path: |
-            out/make/zip
+            out/make
           retention-days: 10
           if-no-files-found: ignore
