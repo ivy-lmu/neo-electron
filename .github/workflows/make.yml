@@ -7,7 +7,7 @@ jobs:
   make:
     strategy:
       matrix:
-        os: ['ubuntu-latest', 'windows-latest', 'macos-latest']
+        os: ['ubuntu-latest', 'windows-latest', 'macOS']
     timeout-minutes: 10
     runs-on: ${{ matrix.os }}
     steps:
