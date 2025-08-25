@@ -1,12 +1,28 @@
 import { app, BrowserWindow } from 'electron';
+import { downloadEngineIfAbsent } from './download-engine';
+import { EngineRunner } from './engine-starter';
 
-const createWindow = () => {
-  const win = new BrowserWindow({
-    width: 800,
-    height: 600
-  });
-  win.loadURL('http://localhost:8080/dev-workflow-ui/faces/login.xhtml?originalUrl=/neo');
+let runner: EngineRunner | undefined;
+
+const launchDevWfUi = async () => {
+  const window = new BrowserWindow({});
+  const engineDir = await downloadEngineIfAbsent(app.getPath('appData'));
+  runner = new EngineRunner(engineDir, log);
+  const engineUrl = await runner.start();
+  log(engineUrl);
+  window.loadURL(engineUrl + '/dev-workflow-ui/faces/login.xhtml?originalUrl=/neo');
 };
+
 app.whenReady().then(() => {
-  createWindow();
+  launchDevWfUi();
 });
+
+app.on('quit', async () => {
+  if (runner) {
+    await runner.stop();
+  }
+});
+
+const log = (message: string) => {
+  console.log(message);
+};

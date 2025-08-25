@@ -16,7 +16,11 @@
     "start": "npm run build && electron dist/main.js",
     "update:axonivy:next": "npx --yes npm-check-updates @axonivy* -t semver -u"
   },
+  "dependencies": {
+    "adm-zip": "^0.5.16"
+  },
   "devDependencies": {
+    "@types/adm-zip": "^0.5.7",
     "electron": "^37.3.1",
     "typescript": "^5.9.2",
     "@axonivy/eslint-config": "~13.2.0-next.847.a8ce22a",
