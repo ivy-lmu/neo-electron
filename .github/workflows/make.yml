@@ -5,8 +5,11 @@ on:
 permissions: {}
 jobs:
   make:
+    strategy:
+      matrix:
+        os: ['ubuntu-latest', 'windows-latest']
     timeout-minutes: 10
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-node@v4
